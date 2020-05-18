@@ -117,3 +117,67 @@ packer packer-basic-example.json
 
 Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-basic-example;sort=name) to your new ami.
   
+
+### Lets add some provisioning to it (using Bash)
+Creating another AMI which is nearly identical to the source which just a new name is boring. So we are going to bake in a web server in to this AMI using packer to make it a bit more special.  Create a file **packer-provision-example.json** and fill it with the following contents:
+
+```json
+{
+	"builders": [
+	  {
+		"type": "amazon-ebs",
+		"region": "eu-west-2",
+		"source_ami" : "ami-01a6e31ac994bbc09",
+		"instance_type": "t2.micro",
+		"ssh_username": "ec2-user",
+		"ami_name": "packer-provision-example {{timestamp}}"
+	 }
+	]
+	"provisioners": [
+	  {
+		"type": "shell",
+		"inline": [
+		  "sudo yum -y install httpd"
+		 ]
+	  }
+	] 
+}
+```
+Let's run the above template now
+```
+packer packer-provision-example.json
+```
+Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-basic-example;sort=name) to your new ami.
+
+### Add some more provisioning to it (using Ansible)
+This bit is only for Unix (Mac/Linux) users. Pre-req for this is have ansible installed. I'll let you figure it out by checking out the following link:
+*  https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-macos
+	
+Let's add some more web pages to this our web server. Create a file **packer-provision-ansible-example.json** and fill it with the following contents:
+```json
+{
+	"builders": [
+	  {
+		"type": "amazon-ebs",
+		"region": "eu-west-2",
+		"source_ami" : "ami-01a6e31ac994bbc09",
+		"instance_type": "t2.micro",
+		"ssh_username": "ec2-user",
+		"ami_name": "packer-provision-ansible-example {{timestamp}}"
+	 }
+	]
+	"provisioners": [
+	  {
+		"type": "shell",
+		"inline": [
+		  "sudo yum -y install httpd"
+		 ]
+	  }
+	] 
+}
+```
+Let's run the above template now
+```
+packer packer-provision-ansible-example.json
+```
+Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-basic-example;sort=name) to your new ami.
