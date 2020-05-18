@@ -142,7 +142,7 @@ Let's run the above template now
 ```
 packer packer-provision-example.json
 ```
-Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-basic-example;sort=name) to your new ami.
+Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-provision-example;sort=name) to your new ami.
 
 ### Add some more provisioning to it (using Ansible)
 This bit is only for Unix (Mac/Linux) users. Pre-req for this is have ansible installed. I'll let you figure it out by checking out the [this link](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-macos)
@@ -174,4 +174,4 @@ Let's run the above template now
 ```
 packer packer-provision-ansible-example.json
 ```
-Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-basic-example;sort=name) to your new ami.
+Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-provision-ansible-example;sort=name) to your new ami.
