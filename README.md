@@ -28,7 +28,7 @@ We are going to be building our first AMI using packer and then provisioning a s
 * Go to https://aws.amazon.com/free/ and follow instructions to sign up to AWS. (Debit/Credit card required)
   
 #### Create AWS access key for CLI access
-* Go to AWS IAM Console and Create a User. [Direct link](`https://console.aws.amazon.com/iam/home?region=eu-west-2#/users`)
+* Go to AWS IAM Console and Create a User. [Direct link](https://console.aws.amazon.com/iam/home?region=eu-west-2#/users)
 * Type username and select 'Programmatic access'
 * Give user 'AdministratorAccess' from the existing policies.
 * Keep clicking next and on the last page click 'Create user'
