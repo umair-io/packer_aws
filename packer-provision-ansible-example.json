@@ -10,7 +10,7 @@
 				"root-device-type": "ebs"
 				},
                 "most_recent": true,
-                "owners": ["398188905081"]
+                "owners": ["YOUR_AWS_ACCOUNT_ID"]
 		},
 		"instance_type": "t2.micro",
 		"ssh_username": "ec2-user",
