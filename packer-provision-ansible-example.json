@@ -1,0 +1,26 @@
+{
+	"builders": [
+	  {
+		"type": "amazon-ebs",
+		"region": "eu-west-2",
+		"source_ami_filter": {
+			"filters": {
+				"virtualization-type": "hvm",
+				"name": "packer-provision-example*",
+				"root-device-type": "ebs"
+				},
+                "most_recent": true,
+                "owners": ["YOUR_AWS_ACCOUNT_ID"]
+		},
+		"instance_type": "t2.micro",
+		"ssh_username": "ec2-user",
+		"ami_name": "packer-provision-ansible-example {{timestamp}}"
+	 }
+	],
+	"provisioners": [
+	  {
+		"type": "ansible",
+		"playbook_file": "update_website.yml"
+	  }
+	] 
+}
