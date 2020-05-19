@@ -1,0 +1,11 @@
+---
+
+- name: Update the webserver
+  gather_facts: false
+  hosts: all
+  tasks:
+    - name: Updating the /var/www/html/index.html
+      lineinfile:
+        dest=/var/www/html/index.html
+        line="Well done YOUR_NAME, you have now done provisioning using ansible"
+        owner=ec2-user
