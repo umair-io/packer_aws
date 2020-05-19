@@ -239,6 +239,6 @@ packer build packer-provision-ansible-example.json
 ```
 Analyse the output and then head over to see out AMI. Here's a [direct link](https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=private-images;search=packer-provision-ansible-example;sort=name) to your new ami.
 
-Now let's build a new ec2 instance with our new AMI. Use [instructions above](#using-our-shiny-new-ami--using-ami-) if you need a reminder on how to. *Use the existing "web" security group if you created one earlier using the instructions above.*
+Now let's build a new ec2 instance with our new AMI. Use [instructions above](#using-our-shiny-new-ami) if you need a reminder on how to. *Use the existing "web" security group if you created one earlier using the instructions above.*
 
 You should have a good basic understanding of how packer works and how it can be used. I'd suggest you continue you packer journey and try building some more images with more stuff baked in them!
