@@ -241,4 +241,4 @@ Analyse the output and then head over to see out AMI. Here's a [direct link](htt
 
 Now let's build a new ec2 instance with our new AMI. Use [instructions above](#using-our-shiny-new-ami) if you need a reminder on how to. *Use the existing "web" security group if you created one earlier using the instructions above.*
 
-You should have a good basic understanding of how packer works and how it can be used. I'd suggest you continue you packer journey and try building some more images with more stuff baked in them!
+You should have a good basic understanding of how packer works and how it can be used. I'd suggest you continue your packer journey and try building some more images with more stuff baked in them!
